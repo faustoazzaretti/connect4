@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Connect Four</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/master.css">
+        <link rel="stylesheet" href="css/contact.css">
+        <script type="text/javascript" src="js/contact.js"></script>
+    </head>
+    <body>
+        <!--Start Wrapper-->
+        <div class="wrapper">
+            <!--Start Form-->
+            <h1 id="sended"></h1>
+            <form id="form" autocomplete="off">
+                <!--Start left-form-->
+                <div class="title">
+                    <h2>Registro</h2>
+                </div>
+                <div class="left-form">
+                    <div class="items">
+                        <label for="name">Nombre</label>
+                        <input id="name" type="text" name="name">
+                        <p id="nameError" class="error"></p>
+                    </div>
+                    <div class="items">
+                        <label for="lastName">Apellido</label>
+                        <input id="lastName" type="text" name="lastName">
+                        <p id="lastNameError" class="error"></p>
+                    </div>
+                    <div class="items">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" name="email">
+                        <p id="emailError" class="error"></p>
+                    </div>
+                    <div class="items">
+                        <label for="age">Edad</label>
+                        <input id="age" type="text" name="age">
+                        <p id="ageError" class="error"></p>
+                    </div>
+                </div>
+                <!--Finish Left Form-->
+                <!--Start Right Form-->
+                <div class="right-form">
+                    <div class="inline">
+                        <div class="sex">
+                            <label for="gender">Sexo</label><br>
+                            <input id="men" type="radio" name="gender" value="masculino">
+                            <label for="male">Masculino</label><br>
+                            <input id="women" type="radio" name="gender" value="femenino">
+                            <label for="female">Femenino</label><br>
+                            <input id="other" type="radio" name="gender" value="otro">
+                            <label for="other">Otro</label>
+                            <p id="sexError" class="error"></p>
+                        </div>
+                        <div class="topic-interest">
+                            <label for="interest">Tema de interes:</label><br>
+                            <input id="music" type="checkbox" name="interest" value="musica">
+                            <label for="interes">Musica</label><br>
+                            <input id="deports" type="checkbox" name="interest" value="deportes">
+                            <label for="interes">Deportes</label><br>
+                            <input id="game" type="checkbox" name="interest" value="juegos">
+                            <label for="interes">Juegos</label><br>
+                            <input id="technology" type="checkbox" name="interest" value="tecnologia">
+                            <label for="interes">Tecnologia</label><br><br>
+                            <p id="interestError" class="error"></p>
+                        </div>
+                    </div>
+                    <div class="country">
+                        <label for="pickCountry">Pais</label>
+                        <select name="paises" id="choose" class="select-css">
+                            <option id="select" name="pickCountry" value="select">Seleccionar</option>
+                            <option id="argentina" name="pickCountry" value="argentina">Argentina</option>
+                            <option id="chile" name="pickCountry" value="chile">Chile</option>
+                            <option id="brasil" name="pickCountry" value="brasil">Brasil</option>
+                            <option id="uruguay" name="pickCountry" value="uruguay">Uruguay</option>
+                        </select>
+                        <p id="chooseError" class="error"></p>
+                    </div>
+                    <div class="comments">
+                        <label for="comentts">Comentarios</label>
+                        <textarea id="comentarios" name="comentts" rows="5" cols="30"></textarea>
+                        <p id="commentsError" class="error"></p>
+                    </div>
+                </div>
+                <!--Finish Right Form-->
+                <div class="button-form">
+                    <button id="send" type="submit" onclick='return enviarFormulario();'>Enviar</button>
+                </div>
+            </form>
+            <a href="index.html"><button id="home">Home</button></a>
+            <!--Finish Form-->
+        </div>
+        <!--Finish Wrapper-->
+    </body>
+</html>

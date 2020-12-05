@@ -1,0 +1,222 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 80%;
+    width: 80vw;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    font-weight: bold;
+    color: #ccc;
+    font-size: 50px;
+}
+
+.left-form,.right-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 60%;
+}
+
+.left-form h2 {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.left-form label,.right-form label {
+    margin: 5px;
+    font-weight: bold;
+}
+
+.items,.country,.comments { 
+    display: flex; 
+    flex-direction: column;
+    height: 70px;
+    width: 75%;
+    margin: 5px 10px 0 5px;
+    margin-bottom: 30px;
+}
+
+.left-form input[type="text"],.right-form input[type="text"] {
+    border: none;
+    margin: 4px 0 4px 0;
+    height: 60px;
+    background-color: #222222;
+    color: #ccc;
+    font-size: 13px;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.country {
+    height: 80px!important;
+}
+
+input[type="text"]:hover,.comments textarea:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
+#choose {
+    height: 30px;
+}
+
+.error {
+    margin: 1px 0 0 5px;
+    font-size: 10px;
+    color: red;
+}
+
+.left-form {
+    margin-right: 2.5%;
+}
+
+.right-form form label {
+    margin: 20px;
+}
+
+.country select option,.country select {
+    background-color: #222222;
+    color: #ccc;
+    border: none;
+    margin: 4px 0 4px 0;    
+}
+
+.inline {
+    display: flex;
+    justify-content: center;
+    width: 100%;    
+}
+
+.sex,.topic-interest {
+    width: 40%;
+}
+
+.sex,.topic-interest {
+    height: 120px;
+    font-size: 13px;
+}
+
+.sex .error {
+    margin-top: 33px;
+}
+
+.comments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+.comments textarea {
+    background-color: #222222;
+    border: none;
+    color: #ccc;
+    outline-style: outset;
+    padding: 10px;
+    resize: none;
+    margin: 4px 0 10px 0;
+}
+
+.button-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+
+button, #home a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    text-decoration: none;
+    color: brown;
+    margin: 20px;
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 30px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a button {
+    text-decoration: none;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #222222;
+    color: #ccc;
+}
+
+@media (max-width: 720px) {
+    .wrapper {
+        height: auto;
+        
+    }
+
+    .title {
+        margin-bottom: 30px;
+    }
+
+    .right-form,.left-form{
+        width: 80%;
+    }
+
+    .left-form h2 {
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .inline {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .sex .error {
+        margin-top: 10px;
+    }
+
+    .sex,.topic-interest {
+        width: 80%;
+    }
+
+    button {
+        margin-top: 50px;
+        margin-bottom: 15px;
+        width: 150px;
+    }
+}

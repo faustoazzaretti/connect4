@@ -1,0 +1,27 @@
+h1 {
+    font-size: 60px;
+    color: cornsilk;
+}
+#menu {
+    display: flex;
+    flex-direction: column;
+    color: red;
+}
+#menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    text-decoration: none;
+    color: brown;
+    margin: 20px;
+    width: 250px;
+    height: 70px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+#menu a:hover {
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+}

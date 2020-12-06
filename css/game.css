@@ -1,0 +1,177 @@
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+}
+#generalTime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: black;
+    line-height: 0;
+    letter-spacing: 0.3em;
+    color: brown;
+    font-size: 30px;    
+    font-family: 'JetBrains Mono', monospace;
+}
+
+#time {
+    margin: 0;
+    padding: 1em;
+}
+
+.nameWinner {
+    font-size: 70px;
+    color: white;
+    text-align: center;
+}
+
+.msjWinner {
+    font-size: 70px;
+    color: red;
+    text-align: center;
+}
+
+.btnReset {
+    width: 300px;
+}
+#gameboard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 20px;
+    width: 100%;
+}
+
+#play-area{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    flex-grow: 1;
+    padding: 0.5em 1em;
+    border-radius: 20px 20px 0 0;
+    background-color: #F5D707;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-grow: 1;
+    max-width: 15vw;
+    background-color: #F5D707;
+}
+
+.column:hover{
+    background-color:brown;
+    cursor: pointer;
+}
+
+.slot{
+    margin: 0.2em 0.5em;
+    padding: 1.3em;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.slot.p1 {
+    background-color: black;
+}
+
+.slot.p2 {
+    background-color: red;
+}
+
+
+#divider{
+    padding: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #F5D707;
+}
+
+#menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: brown;
+    font-size: 1.2rem;
+    color: #0F8FAF;
+}
+
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 1em;
+}
+
+.player p {
+    margin: 0.2em 0;
+    padding: 0;
+    font-size: 1.5rem;
+    color: black;
+}
+
+
+.turn p {
+    margin: 0;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: white;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    text-decoration: none;
+    color: brown;
+    margin: 20px;
+    width: 125px;
+    height: 35px;
+    border-radius: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 30px;
+    text-align: center;
+}
+button a {
+    text-decoration: none;
+    color: brown;
+}
+button a:hover,button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+

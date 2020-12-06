@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Connect Four</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/master.css">
+        <link rel="stylesheet" href="css/game.css">
+        <script type="text/javascript" src="js/board.js"></script>
+        <script type="text/javascript" src="js/player.js"></script>
+        <script type="text/javascript" src="js/timer.js"></script>
+        <script type="text/javascript" src="js/game.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="game">
+                <div id="generalTime">
+                    <p id="time">00:00</p>
+                </div>
+                <div id="gameboard">
+                    <div id="finalMessage" class="none">
+                        <p id="winner" class="nameWinner"></p>
+                        <p id="message" class="msjWinner"></p>
+                        <button id="reset" class="btnReset">Reset</button>
+                    </div>
+                    <div id="play-area"></div>
+                    <div id="divider"></div>
+                    <div id="menu">
+                        <div class="player">
+                            <p id="p1-name">Name (P1)</p>
+                            <p id="p1-time">00:00</p>
+                        </div>
+                        <div id="turn" class="turn slot">
+                            <p id="turn-text">P1</p>
+                        </div>
+                        <div class="player">
+                            <p id="p2-name">Name (P2)</p>
+                            <p id="p2-time">00:00</p>
+                        </div>
+                    </div>
+                </div>
+                <button id="save">Save</button>
+            </div>
+            <button><a class="icon" href="index.html">Home</a></button>
+        </div>
+    </body>
+</html>

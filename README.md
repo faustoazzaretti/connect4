@@ -1,7 +1,7 @@
 # LPPA FINAL
 ## CONNECT 4
 
-This site was built using GitHub Pages[Try the game Here](https://faustoazzaretti.github.io/connect4/)
+This site was built using GitHub Pages [Try the game Here](https://faustoazzaretti.github.io/connect4/)
 
 *Requerido:*
   1. Desarrollar el juego para que sea jugable desde una computadora o un celular cumpliendo con las reglas originales descriptas en wikipedia.

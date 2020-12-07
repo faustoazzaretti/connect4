@@ -1,5 +1,3 @@
-/*Funcion para validar nombre, si el lenght del input es 1 o 2, te indica Nombre corto, si esta vacio te dice campo incompleto
-y si el nombre es correcto no muestra ningun error*/
 function validateName() {
     if (userName.value.length < 3 && userName.value.length > 0) {
         userName.innerHTML = 'Nombre demasiado corto.'
@@ -15,8 +13,6 @@ function validateName() {
     }
 }
 
-/*Funcion para validar apellido, si el lenght del input es 1 o 2, te indica Nombre corto, si esta vacio te dice campo incompleto
-y si el nombre es correcto no muestra ningun error*/
 function validateSurname() {
     if (lastName.value.length < 3 && lastName.value.length > 0) {
         lastName.innerHTML = 'Apellido demasiado corto.'
@@ -32,8 +28,6 @@ function validateSurname() {
     }
 }
 
-/*Funcion para validad email, hace un test, el test hace la comparacion entre mi expresion regular llamada pattern,
-y con el value del email que ingrese, si es correcto devuelve true de lo contrario muestra el error.*/
 function validateEmail() {
     var pattern = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
     if (pattern.test(email.value)) {
@@ -46,7 +40,6 @@ function validateEmail() {
     }
 }
 
-/*Funcion para validad edad, si no es un numero, o la edad es menor que 0 y mayor que 99 te indica el error*/
 function validateAge() {
     if (isNaN(age.value) || age.value < 1 || age.value > 99) {
         ageError.innerHTML = 'Edad Invalida'
@@ -58,7 +51,6 @@ function validateAge() {
     }
 }
 
-/*Funcion para sexo, comprueba si todos los radiobuttons estan sin checkear muestra error para que puedas seleccionar uno*/
 function validateSex() {
     if (men.checked === false && women.checked === false && other.checked === false) {
         sexError.innerHTML = 'Debe seleccionar un sexo'
@@ -70,7 +62,6 @@ function validateSex() {
     }
 }
 
-/*Funcion para validad interes, lo mismo que el de arriba, pero en esta ocasion son checkboxs*/
 function validateInterest() {
     if (music.checked === false && deports.checked === false && game.checked === false && technology.checked === false) {
         textInterestError.innerHTML = 'Debe seleccionar un interes'
@@ -82,7 +73,6 @@ function validateInterest() {
     }
 }
 
-/*Funcion para validar el pais seleccionado, si la opcion seleccionar esta seleccionado muestra el error*/
 function validateCountry() {
     if (select.selected) {
         chooseError.innerHTML = 'Seleccione un pais'
@@ -94,7 +84,6 @@ function validateCountry() {
     }
 }
 
-/*Funcion para comentario, en este caso si el lenght es menor que 15 te indica el error para que lo completes*/
 function validateComment() {
     if (comments.value.length < 15) {
         commentsError.innerHTML = 'El comentario debe tener al menos 15 caracteres'
@@ -106,7 +95,6 @@ function validateComment() {
     }
 }
 
-/*Funcion para mostrar los datos en la consola*/
 function showDate() {
     console.log('Nombre: ' + userName.value)
     console.log('Apellido: ' + lastName.value)
@@ -151,8 +139,6 @@ function showDate() {
 
 }
 
-/*Function para limpiar inputs, cree un bool en cada validacion para saber su estado.
- Si es true, y todas son true, limpia los inputs, y muestra en consola a la funcion showdata*/
 function cleanInputs() {
     if (completeUsername && completeLastName && completeEmail && completeAge && completeSex && completeCountry && completeComments) {
         showDate()
@@ -175,15 +161,12 @@ function cleanInputs() {
     }
 }
 
-/*Function para mensaje enviado*/
-
 var sendedForm = function () {
     document.getElementById("form").style.display = "none";
     h1.innerHTML = 'Comentarios enviados, Muchas gracias!!!!!';
     document.getElementById("home").style.display = "flex";
 }
 
-/*Funcion para enviar formulario, se va a ejecutar cuando el usuario hace click en el boton*/
 var sendForm = function () {
     console.clear()
     validateName()
@@ -200,7 +183,6 @@ var sendForm = function () {
 
 
 window.onload = function () {
-    //Selecciono todos los elementos, por ID, para poder utilizarlos en mi codigo javascript.
     userName = document.getElementById('name')
     lastName = document.getElementById('lastName')
     age = document.getElementById('age')
@@ -220,7 +202,6 @@ window.onload = function () {
     select = document.getElementById('select')
     comments = document.getElementById('comentarios')
     sendButton = document.getElementById('send')
-    //Selecciono todos los id del parrafo error para poder mostrar el mensaje de ingrese el valor.
     userNameError = document.getElementById('nameError')
     lastNameError = document.getElementById('lastNameError')
     ageError = document.getElementById('ageError')
@@ -231,6 +212,5 @@ window.onload = function () {
     commentsError = document.getElementById('commentsError')
     h1 = document.getElementById('sended')
     btnHome = document.getElementById('home')
-    //Evento boton enviar.
     sendButton.onclick = sendForm
 }

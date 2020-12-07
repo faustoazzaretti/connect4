@@ -135,7 +135,6 @@ var saveGame = function () {
     postWin();
 }
 
-//checks the 4 possible scenarios for a win
 var checkWin = function () {
     //check vertical placement
     for (var i = 0; i < board.board.length; i++) {
@@ -175,7 +174,7 @@ var checkWin = function () {
                 if (board.board[i][j] === (board.board[i + 1][j - 1]) && board.board[i][j] === (board.board[i + 2][j - 2]) &&
                     board.board[i][j] === (board.board[i + 3][j - 3])) {
                     displayPopup(board.board[i][j]);
-                    console.log('gano alguien');
+                    postWin();
                 }
             }
         }
@@ -252,19 +251,16 @@ var toggleTurn = function () {
 var loadSavedGame = function () {
     savedGames = JSON.parse(localStorage['savedGames']);
     savedTimers = JSON.parse(localStorage['savedTimers']);
-
     board.board = savedGames[savedGameIndex].currentBoard;
     turn = savedGames[savedGameIndex].turn;
     p1 = savedGames[savedGameIndex].p1;
     p2 = savedGames[savedGameIndex].p2;
-
     p1Timer.currentTimer = savedTimers[savedGameIndex].p1.currentTimer;
     p1Timer.lastUpdatedTime = savedTimers[savedGameIndex].p1.lastUpdatedTime;
     p2Timer.currentTimer = savedTimers[savedGameIndex].p2.currentTimer;
     p2Timer.lastUpdatedTime = savedTimers[savedGameIndex].p2.lastUpdatedTime;
     globalTimer.currentTimer = savedTimers[savedGameIndex].globalTime.currentTimer;
     globalTimer.lastUpdatedTime = savedTimers[savedGameIndex].globalTime.lastUpdatedTime;
-
     board.render();
     globalTimer.startTimer();
     p1Timer.startTimer();
@@ -276,13 +272,11 @@ var initialize = function () {
     document.getElementById("reset").style.display = "none";
     getPlayerNames();
     board = new Board(boardHTML, columnsHTML, twoPlayerBoard);
-
     p1 = new Player('Player 1');
     p2 = new Player('Player 2');
     p1Timer = new Timer(p1TimerHTML, 0, lastUpdatedTime, 0);
     p2Timer = new Timer(p2TimerHTML, 0, lastUpdatedTime, 0);
     globalTimer = new Timer(globalTimerHTML, 0, lastUpdatedTime, 0);
-
     if (isNewGame) {
         p1.name = p1Name.innerHTML.slice(0, -5);
         p2.name = p2Name.innerHTML.slice(0, -5);
@@ -291,7 +285,6 @@ var initialize = function () {
         toggleTurn();
         board.render();
         flipTurn();
-
     } else {
         loadSavedGame();
     }

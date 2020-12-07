@@ -1,6 +1,8 @@
 # LPPA FINAL
 ## CONNECT 4
 
+### How to play [Connect Four](https://en.wikipedia.org/wiki/Connect_Four)
+
 This site was built using GitHub Pages [Try the game Here](https://faustoazzaretti.github.io/connect4/)
 
 *Requerido:*

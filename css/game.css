@@ -6,6 +6,7 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 20px;
 }
+
 #generalTime {
     display: flex;
     flex-direction: column;
@@ -40,7 +41,8 @@
 .btnReset {
     width: 300px;
 }
-#gameboard{
+
+#gameboard {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +52,7 @@
     width: 100%;
 }
 
-#play-area{
+#play-area {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -63,7 +65,7 @@
     background-color: #F5D707;
 }
 
-.column{
+.column {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,12 +76,12 @@
     background-color: #F5D707;
 }
 
-.column:hover{
+.column:hover {
     background-color:brown;
     cursor: pointer;
 }
 
-.slot{
+.slot {
     margin: 0.2em 0.5em;
     padding: 1.3em;
     border-radius: 50%;
@@ -95,14 +97,14 @@
 }
 
 
-#divider{
+#divider {
     padding: 0.5em;
     width: 100%;
     box-sizing: border-box;
     background-color: #F5D707;
 }
 
-#menu{
+#menu {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -158,10 +160,12 @@ button {
     font-size: 30px;
     text-align: center;
 }
+
 button a {
     text-decoration: none;
     color: brown;
 }
+
 button a:hover,button:hover {
     color: white;
     cursor: pointer;

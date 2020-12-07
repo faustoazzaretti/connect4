@@ -16,7 +16,6 @@ h1 {
     font-family: 'JetBrains Mono', monospace;
 }
 
-
 #empty {
     font-size: 1.5rem;
 }
@@ -113,7 +112,8 @@ button a {
     text-decoration: none;
     color: white;
 }
-.btn:hover,button:hover{
+
+.btn:hover,button:hover {
     outline: none;
     cursor: pointer;
     border: 1px solid #f1f1f1;
@@ -132,22 +132,4 @@ button a {
     margin: 0.3em;
     border-radius: 8px;
     font-size: 1rem;
-}
-
-@media only screen and (max-width: 740px) {
-    #title-scatter {
-        flex-direction: column;
-    }
-
-    .letters {
-        font-size: 12vw;
-    }
-
-    #games {
-        width: 100vw;
-    }
-
-    .match-container {
-        font-size: 1.2rem;
-    }
 }

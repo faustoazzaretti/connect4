@@ -30,6 +30,11 @@ form {
     font-size: 50px;
 }
 
+.title h2 {
+    font-size: 60px;
+    color: cornsilk;
+}
+
 .left-form,.right-form {
     display: flex;
     flex-direction: column;

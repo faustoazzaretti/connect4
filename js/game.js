@@ -25,6 +25,8 @@ var isNewGame = null;
 var gameOver = false;
 var threePlayers = false;
 
+
+/* I created a multidimensional array for th board*/
 var twoPlayerBoard = [
     [null, null, null, null, null, null],
     [null, null, null, null, null, null],
@@ -35,6 +37,7 @@ var twoPlayerBoard = [
     [null, null, null, null, null, null]
 ];
 
+/*Reset function*/
 var resetGame = function () {
     popup.className = 'hidden';
     boardHTML.className = '';
@@ -51,6 +54,7 @@ var resetGame = function () {
     }
 }
 
+/*Reset timmers function*/
 var resetTimers = function () {
     idFlex();
     globalTimer.resetTimer();
@@ -58,18 +62,21 @@ var resetTimers = function () {
     p2Timer.resetTimer();
 }
 
+/*Start timmers function*/
 var startTimers = function () {
     globalTimer.startTimer();
     p1Timer.startTimer();
     p2Timer.startTimer();
 }
 
+/*Stop timmers*/
 var stopTimers = function () {
     globalTimer.stopTimer();
     p1Timer.stopTimer();
     p2Timer.stopTimer();
 }
 
+/*Function for show the messegge, if you win, or if you tie*/
 var displayPopup = function (playerName) {
     finalMessage.className = ' ';
     boardHTML.className = ' disabled blur'
@@ -91,6 +98,7 @@ var displayPopup = function (playerName) {
     stopTimers();
 }
 
+/*After the win, with this function i change the display this elements*/
 var postWin = function () {
     console.log('Tenemos un ganador')
     document.getElementById("play-area").style.display = "none";
@@ -102,6 +110,7 @@ var postWin = function () {
 
 }
 
+/*I change the display to flex for this elements*/
 var idFlex = function () {
     document.getElementById("play-area").style.display = "flex";
     document.getElementById("divider").style.display = "flex";
@@ -112,6 +121,7 @@ var idFlex = function () {
     document.getElementById("message").style.display = "none";
 }
 
+/*Obtein the date and format date*/
 var getDate = function () {
     var date = new Date();
     var day = date.getDate();
@@ -120,20 +130,17 @@ var getDate = function () {
     return day + '/' + month + '/' + year;
 }
 
+/*I push to localstorage the dates for currentBoard,players,date,timmers*/
 var saveGame = function () {
-    if (threePlayers) {
-        savedGames.push({ currentBoard: board.board, p1: p1, p2: p2, turn: turn, date: getDate() });
-        savedTimers.push({ p1: p1Timer, p2: p2Timer, globalTime: globalTimer });
-    } else {
-        savedGames.push({ currentBoard: board.board, p1: p1, p2: p2, turn: turn, date: getDate() });
-        savedTimers.push({ p1: p1Timer, p2: p2Timer, globalTime: globalTimer });
-    }
+    savedGames.push({ currentBoard: board.board, p1: p1, p2: p2, turn: turn, date: getDate() });
+    savedTimers.push({ p1: p1Timer, p2: p2Timer, globalTime: globalTimer });
     localStorage['savedGames'] = JSON.stringify(savedGames);
     localStorage['savedTimers'] = JSON.stringify(savedTimers);
     saving = true;
     displayPopup(null);
     postWin();
 }
+
 
 var checkWin = function () {
     //check vertical placement
@@ -196,6 +203,7 @@ var checkDraw = function () {
     }
 }
 
+/*I save the name of the localstorage in JSON, and display en HTML the value of the two players*/
 var getPlayerNames = function () {
     if (isNewGame) {
         savedNames = JSON.parse(localStorage['playersNames']);
@@ -207,47 +215,33 @@ var getPlayerNames = function () {
     }
 }
 
-var flipTurn = function () {
+/*Depends the turn i change the name class of the turnHTML for the players can visualize if is you turn*/
+var changeTurnIcon = function () {
     if (turn === 'p1') {
-        turnHTML.className = 'switch-p1 turn slot p1';
-        turnHTMLText.className = 'switch-p1';
+        turnHTML.className = 'turn slot p1';
         turnHTMLText.innerHTML = 'P1';
     } else if (turn === 'p2') {
-        turnHTML.className = 'switch-p2 turn slot p2';
-        turnHTMLText.className = 'switch-p2';
+        turnHTML.className = 'turn slot p2';
         turnHTMLText.innerHTML = 'P2';
     }
 }
 
+/*I change the turn, and stop the timer for this player, and execute changeTurnIcon function*/
 var toggleTurn = function () {
     if (!gameOver) {
-        if (!threePlayers) {
-            turn = (turn === 'p1') ? 'p2' : 'p1';
-            if (turn === 'p1') {
-                p2Timer.stopTimer();
-                p1Timer.startTimer();
-            } else {
-                p1Timer.stopTimer();
-                p2Timer.startTimer();
-            }
-            flipTurn();
+        turn = (turn === 'p1') ? 'p2' : 'p1';
+        if (turn === 'p1') {
+            p2Timer.stopTimer();
+            p1Timer.startTimer();
         } else {
-            turn = (turn === 'p1') ? 'p2' : console.log('Test');
-            if (turn === 'p1') {
-                p2Timer.stopTimer();
-                p1Timer.startTimer();
-            } else if (turn === 'p2') {
-                p1Timer.stopTimer();
-                p2Timer.startTimer();
-            } else {
-                p1Timer.stopTimer();
-                p2Timer.stopTimer();
-            }
-            flipTurn();
+            p1Timer.stopTimer();
+            p2Timer.startTimer();
         }
+        changeTurnIcon();
     }
 }
 
+/*Save all dates, the timmers,board status,turn,player times,global timer, name of players*/
 var loadSavedGame = function () {
     savedGames = JSON.parse(localStorage['savedGames']);
     savedTimers = JSON.parse(localStorage['savedTimers']);
@@ -268,6 +262,8 @@ var loadSavedGame = function () {
     setTimeout(toggleTurn, 1);
 }
 
+/*Initialize function, show the players names,print the board, create two players depends 
+the isNewGame value*/
 var initialize = function () {
     document.getElementById("reset").style.display = "none";
     getPlayerNames();
@@ -284,12 +280,13 @@ var initialize = function () {
         globalTimer.startTimer();
         toggleTurn();
         board.render();
-        flipTurn();
+        changeTurnIcon();
     } else {
         loadSavedGame();
     }
 }
 
+/*Obtein all elements from html to use in this game.js, and events listeners*/
 window.onload = function () {
     savedGames = JSON.parse(localStorage['savedGames'] || '[]');
     savedTimers = JSON.parse(localStorage['savedTimers'] || '[]');

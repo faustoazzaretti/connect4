@@ -72,7 +72,6 @@
     justify-content: center;
     box-sizing: border-box;
     flex-grow: 1;
-    max-width: 15vw;
     background-color: #F5D707;
 }
 
@@ -82,7 +81,7 @@
 }
 
 .slot {
-    margin: 0.2em 0.5em;
+    margin: 2px;
     padding: 1.3em;
     border-radius: 50%;
     background-color: white;

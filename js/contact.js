@@ -95,53 +95,8 @@ function validateComment() {
     }
 }
 
-function showDate() {
-    console.log('Nombre: ' + userName.value)
-    console.log('Apellido: ' + lastName.value)
-    console.log('Email:' + email.value)
-    console.log('Edad: ' + age.value)
-    if (men.checked) {
-        console.log('Sexo: Masculino')
-    } else if (women.checked) {
-        console.log('Sexo: Femenino')
-    } else if (other.checked) {
-        console.log('Sexo: Otro')
-    }
-    console.log('Temas de interes:')
-    if (music.checked) {
-        console.log('Musica')
-    }
-    if (deports.checked) {
-        console.log('Deportes')
-    }
-    if (game.checked) {
-        console.log('Juegos')
-    }
-    if (technology.checked) {
-        console.log('Tecnologia')
-    }
-    if (select.selected) {
-        console.log('Pais:')
-    }
-    if (argentina.selected) {
-        console.log('Pais: Argentina')
-    }
-    if (chile.selected) {
-        console.log('Pais: Chile')
-    }
-    if (brasil.selected) {
-        console.log('Pais: Brasil')
-    }
-    if (uruguay.selected) {
-        console.log('Pais: Uruguay')
-    }
-    console.log('Comentarios: ' + comments.value)
-
-}
-
 function cleanInputs() {
     if (completeUsername && completeLastName && completeEmail && completeAge && completeSex && completeCountry && completeComments) {
-        showDate()
         userName.value = ''
         lastName.value = ''
         email.value = ''

@@ -290,22 +290,20 @@ window.onload = function () {
     savedGames = JSON.parse(localStorage['savedGames'] || '[]');
     savedTimers = JSON.parse(localStorage['savedTimers'] || '[]');
     savedGameIndex = JSON.parse(localStorage['gameIndex'] || '[]');
-    if (window.location.href.indexOf('game.html') > -1) {
-        p1Name = document.getElementById('p1-name');
-        p2Name = document.getElementById('p2-name');
-        p1TimerHTML = document.getElementById('p1-time');
-        p2TimerHTML = document.getElementById('p2-time');
-        globalTimerHTML = document.getElementById('time');
-        columnsHTML = document.getElementsByClassName('column');
-        boardHTML = document.getElementById('play-area');
-        turnHTML = document.getElementById('turn');
-        turnHTMLText = document.getElementById('turn-text');
-        resetBtn = document.getElementById('reset');
-        finalMessage = document.getElementById('finalMessage');
-        popupMessage = document.getElementById('message');
-        popupWinner = document.getElementById('winner');
-        document.getElementById('save').addEventListener('click', saveGame);
-        isNewGame = JSON.parse(localStorage['newGame']);
-        initialize();
-    }
+    p1Name = document.getElementById('p1-name');
+    p2Name = document.getElementById('p2-name');
+    p1TimerHTML = document.getElementById('p1-time');
+    p2TimerHTML = document.getElementById('p2-time');
+    globalTimerHTML = document.getElementById('time');
+    columnsHTML = document.getElementsByClassName('column');
+    boardHTML = document.getElementById('play-area');
+    turnHTML = document.getElementById('turn');
+    turnHTMLText = document.getElementById('turn-text');
+    resetBtn = document.getElementById('reset');
+    finalMessage = document.getElementById('finalMessage');
+    popupMessage = document.getElementById('message');
+    popupWinner = document.getElementById('winner');
+    document.getElementById('save').addEventListener('click', saveGame);
+    isNewGame = JSON.parse(localStorage['newGame']);
+    initialize();
 }

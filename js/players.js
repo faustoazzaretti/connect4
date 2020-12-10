@@ -15,13 +15,11 @@ var validateInput = function () {
     if (p1Name.value.length < 4) {
         p1Name.value = '';
         p1Name.placeholder = 'Name too short!';
-        errorMsg.className = '';
         isValid = false;
     }
     if (p2Name.value.length < 4) {
         p2Name.value = '';
         p2Name.placeholder = 'Name too short!';
-        errorMsg.className = '';
         isValid = false;
     }
     return isValid;
@@ -49,6 +47,6 @@ window.onload = function () {
     btnAddContainer = document.getElementById('btn-container');
     errorMsg = document.getElementById('error');
     btnStart.addEventListener('click', function () {
-        (validateInput()) ? nextPage() : errorBtn();
+        (validateInput()) ? nextPage() : console.log('Debe completar los inputs de la forma requerida');
     });
 }

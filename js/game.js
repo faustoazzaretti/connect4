@@ -39,7 +39,6 @@ var twoPlayerBoard = [
 
 /*Reset function*/
 var resetGame = function () {
-    popup.className = 'hidden';
     boardHTML.className = '';
     if (saving) {
         saving = false;
@@ -241,7 +240,7 @@ var toggleTurn = function () {
     }
 }
 
-/*Save all dates, the timmers,board status,turn,player times,global timer, name of players*/
+/*Load all dates, the timmers,board status,turn,player times,global timer, name of players*/
 var loadSavedGame = function () {
     savedGames = JSON.parse(localStorage['savedGames']);
     savedTimers = JSON.parse(localStorage['savedTimers']);
@@ -286,7 +285,7 @@ var initialize = function () {
     }
 }
 
-/*Obtein all elements from html to use in this game.js, and events listeners*/
+/*Obtain all elements from html to use in this game.js, and events listeners*/
 window.onload = function () {
     savedGames = JSON.parse(localStorage['savedGames'] || '[]');
     savedTimers = JSON.parse(localStorage['savedTimers'] || '[]');
